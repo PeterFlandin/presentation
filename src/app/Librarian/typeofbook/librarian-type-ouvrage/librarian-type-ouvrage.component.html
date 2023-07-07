@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="card col-md-6 offset-md-3">
+    
+    <div class="row">
+      <h3 class="text-center">Type d'ouvrage</h3>
+      <hr />
+      <div class="card-body">
+        <button (click) = "getCreate()" class = "btn btn-primary" style="margin-left: 1px"> Create</button>
+        <nav class="navbar bg-body-tertiary">
+          <div class="container-fluid">
+            <a class="navbar-brand">Type d'ouvrage</a>
+            <div class="d-flex">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Recherche par type"
+                aria-label="Search"
+                [(ngModel)]="searchQuery"
+              />
+            </div>
+          </div>
+        </nav>
+        <br />
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Nom du type</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let type of typesOuvrage">
+              <td>{{ type.type }}</td>
+              <td>
+                <div class="btn-group" role="group">
+                  <button (click)="updateTypebook(type.id)" type="button" class="btn btn-primary mr-2">Modifier</button>
+                  <button (click)="deleteType(type.id)" type="button" class="btn btn-danger mr-1">Supprimer</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button (click) = "getDashboard()" class="btn btn-secondary" style="margin-left: 10px">Retour au menu</button>
+        
+        <br />

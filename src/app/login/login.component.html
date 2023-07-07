@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="card col-md-6 offset-md-3">
+      <div class="row">
+        <h2 class="text-center">Connexion</h2>
+        <hr />
+        <div class="card-body">
+          <form (ngSubmit)="login()">
+            <div class="form-group">
+              <label for="username">Nom d'utilisateur :</label>
+              <input type="text" class="form-control" id="username" name="username" [(ngModel)]="username">
+            </div>
+            <div class="form-group">
+              <label for="password">Mot de passe :</label>
+              <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password">
+            </div>
+            <div class="form-group">
+              <label for="role">Rôle :</label>
+              <select class="form-control" id="role" name="role" [(ngModel)]="role">
+                <option value="subscriber">Abonné</option>
+                <option value="librarian">Bibliothécaire</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" type="submit">Se connecter</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

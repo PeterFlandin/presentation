@@ -1,0 +1,55 @@
+<h2>DashBoard</h2>
+<button (click) = "logout()" class = "btn btn-danger" style="margin-left: 10px"> LogOut</button>
+<div class="row">
+  <div class="col-sm-6 mb-3 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Ouvrages</h5>
+        <p class="card-text">
+          Consulter les ouvrages. Gérer la création, la mise à jour, la
+          suppression des ouvrages.
+        </p>
+        <a routerLink="/librarian-ouvrage" class="btn btn-primary"> >> </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Abonnés</h5>
+        <p class="card-text">
+          Consulter les abonnés. Gérer la création, la mise à jour, la
+          suppression des abonnés.
+        </p>
+        <a routerLink="/librarian-list" class="btn btn-primary"> >> </a>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<div class="row">
+  <div class="col-sm-6 mb-3 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Type d'ouvrage</h5>
+        <p class="card-text">
+          Consulter les types d'ouvrage. Gérer la création, la mise à jour, la
+          suppression des types d'ouvrage.
+        </p>
+        <a routerLink="/librarian-typeOuvrage" class="btn btn-primary"> >> </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Emprunt</h5>
+        <p class="card-text">
+          Consulter les emprunts. Gérer la validation ou la suppression des
+          réservations.
+        </p>
+        <a routerLink="/librarian-emprunt" class="btn btn-primary"> >> </a>
+      </div>
+    </div>
+  </div>
+</div>

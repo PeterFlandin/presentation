@@ -1,0 +1,83 @@
+<h3>composant sous-enfant</h3>
+
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand">Emprunt</a>
+    <form class="d-flex" role="search">
+      <input
+        class="form-control me-2"
+        type="search"
+        placeholder="Saisissez un abonné"
+        aria-label="Search"
+      />
+      <button class="btn btn-outline-success" type="submit">Chercher</button>
+    </form>
+  </div>
+</nav>
+
+<br />
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Abonné</th>
+      <th scope="col">Ouvrage</th>
+      <th scope="col">Date de début</th>
+      <th scope="col">Date de fin</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Mark</td>
+      <td>Mark</td>
+      <td>Mark</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Mark</td>
+      <td>Mark</td>
+      <td>Mark</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry the Bird</td>
+      <td>Mark</td>
+      <td>Mark</td>
+      <td>Mark</td>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>Larry the Bird</td>
+      <td>Mark</td>
+      <td>Mark</td>
+      <td>Mark</td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
+
+<div
+  class="btn-toolbar d-flex justify-content-between"
+  role="toolbar"
+  aria-label="Toolbar with button groups"
+>
+  <div class="btn-group" role="group" aria-label="First group">
+    <a routerLink="/menu-librarian" class="btn btn-secondary">
+      Retour au menu
+    </a>
+  </div>
+
+  <div class="btn-group" role="group" aria-label="First group">
+    <div class="me-2">
+      <button type="button" class="btn btn-primary">Valider</button>
+    </div>
+    <div class="me-2">
+      <button type="button" class="btn btn-primary">Supprimer</button>
+    </div>
+  </div>
+</div>

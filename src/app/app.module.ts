@@ -21,6 +21,8 @@ import { LibrarianDetailTypeofbookComponent } from './Librarian/typeofbook/libra
 import { LibrarianUpdateTypeofbookComponent } from './Librarian/typeofbook/librarian-update-typeofbook/librarian-update-typeofbook.component';
 import { LibrarianCreateOuvrageComponent } from './Librarian/librarian-ouvrages/librarian-create-ouvrage/librarian-create-ouvrage.component';
 import { AuthorlistComponent } from './authorlist/authorlist.component';
+import { LibrarianOuvrageDetailsComponent } from './Librarian/librarian-ouvrages/librarian-ouvrage-details/librarian-ouvrage-details.component';
+import { LibrarianOuvrageUpdateComponent } from './Librarian/librarian-ouvrages/librarian-ouvrage-update/librarian-ouvrage-update.component';
 
 @NgModule({
   declarations: [
@@ -41,13 +43,10 @@ import { AuthorlistComponent } from './authorlist/authorlist.component';
     LibrarianUpdateTypeofbookComponent,
     LibrarianCreateOuvrageComponent,
     AuthorlistComponent,
+    LibrarianOuvrageDetailsComponent,
+    LibrarianOuvrageUpdateComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
 
   providers: [],
   bootstrap: [AppComponent],

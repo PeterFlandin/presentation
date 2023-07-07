@@ -15,6 +15,8 @@ import { LibearianCreateTypeofbookComponent } from './Librarian/typeofbook/libea
 import { LibrarianUpdateTypeofbookComponent } from './Librarian/typeofbook/librarian-update-typeofbook/librarian-update-typeofbook.component';
 import { LibrarianCreateOuvrageComponent } from './Librarian/librarian-ouvrages/librarian-create-ouvrage/librarian-create-ouvrage.component';
 import { AuthorlistComponent } from './authorlist/authorlist.component';
+import { LibrarianOuvrageUpdateComponent } from './Librarian/librarian-ouvrages/librarian-ouvrage-update/librarian-ouvrage-update.component';
+import { LibrarianDetailTypeofbookComponent } from './Librarian/typeofbook/librarian-detail-typeofbook/librarian-detail-typeofbook.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -26,16 +28,26 @@ const routes: Routes = [
   { path: 'librarian-typeOuvrage', component: LibrarianTypeOuvrageComponent },
   { path: 'librarian-emprunt', component: LibrarianEmpruntComponent },
   { path: 'subscriber-ouvrage', component: SubscriberOuvrageComponent },
-  { path: 'librarian-list', component: ListsubscriberComponent},
-  { path: 'update-Subscriber/:id', component : UpdateSubscriberComponent },
-  { path: 'subscriber-detail/:id', component : SubscriberDetailsComponent },
-  { path: 'create-subscriber', component : CreateSubscriberComponent },
-  { path: 'dashboard', component:MenuLibrarianComponent },
-  { path: 'createtypeouvrage', component: LibearianCreateTypeofbookComponent},
-  {path: 'updateType/:id', component:LibrarianUpdateTypeofbookComponent },
-  {path: 'createLibrarianOuvrage', component: LibrarianCreateOuvrageComponent },
-  {path: 'authorlist' , component : AuthorlistComponent}
-
+  { path: 'librarian-list', component: ListsubscriberComponent },
+  { path: 'update-Subscriber/:id', component: UpdateSubscriberComponent },
+  { path: 'subscriber-detail/:id', component: SubscriberDetailsComponent },
+  { path: 'create-subscriber', component: CreateSubscriberComponent },
+  { path: 'dashboard', component: MenuLibrarianComponent },
+  { path: 'createtypeouvrage', component: LibearianCreateTypeofbookComponent },
+  { path: 'updateType/:id', component: LibrarianUpdateTypeofbookComponent },
+  {
+    path: 'createLibrarianOuvrage',
+    component: LibrarianCreateOuvrageComponent,
+  },
+  { path: 'authorlist', component: AuthorlistComponent },
+  {
+    path: 'librarian-ouvrage/update/:id',
+    component: LibrarianOuvrageUpdateComponent,
+  },
+  {
+    path: 'librarian-ouvrage/add',
+    component: LibrarianCreateOuvrageComponent,
+  },
 ];
 
 @NgModule({

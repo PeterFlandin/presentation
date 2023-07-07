@@ -1,0 +1,26 @@
+<h2>Profil de l'utilisateur</h2>
+
+<table class = "table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Prenom</th>
+            <th scope="col">Nom</th>
+            <th scope="col">email</th>
+            <th scope="col">address</th>
+            <th scope="col">password</th>
+            <th scope="col">login</th>
+            <th scope="col">action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <td>{{ profilById.firstname }}</td>
+        <td>{{ profilById.lastname }}</td>
+        <td>{{ profilById.email }}</td>
+        <td>{{ profilById.address }}</td>
+        <td>{{ profilById.password }}</td>
+        <td>{{ profilById.login }} </td>
+        <td><button (click) = "updateProfil(profilById.id)" class = "btn btn-primary">Update</button></td>
+    </tbody>
+</table>
+
+

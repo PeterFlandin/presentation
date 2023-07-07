@@ -1,9 +1,7 @@
-<!-- <p>subscriber-ouvrage works!</p>
-
 <nav class="navbar bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand">Ouvrages</a>
-    <form class="d-flex" role="search">
+    <!-- <form class="d-flex" role="search">
       <input
         class="form-control me-2"
         type="search"
@@ -11,7 +9,16 @@
         aria-label="Search"
       />
       <button class="btn btn-outline-success" type="submit">Chercher</button>
-    </form>
+    </form> -->
+    <!-- <mat-form-field class="example-full-width">
+      <input type="text" placeholder="Search" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of options" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field> -->
+    <button class="btn btn-outline-success" type="submit">Chercher</button>
   </div>
 </nav>
 
@@ -20,22 +27,25 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <!-- <th scope="col">#</th> -->
       <th scope="col">Titre</th>
       <th scope="col">Auteur</th>
       <th scope="col">Résumé</th>
       <th scope="col">Type d'ouvrage</th>
+      <th scope="col"></th> <!-- Nouvelle colonne pour les boutons radio -->
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
+    <tr *ngFor="let book of books">
+      <!-- <th scope="row"></th> -->
+      <td>{{ book.title }}</td>
+      <td>{{ book.authorObj.firstname }}</td>
+      <td> {{ book.summary }}</td>
+      <td>{{ book.typeBook.type }}</td>
+      <td>
+        <!-- <input type="radio" name="selectedBook" (click)="selectBook(book)" /> -->
+      </td> <!-- Ajout d'un bouton radio pour la sélection de l'ouvrage -->
     </tr>
-    
   </tbody>
 </table>
 
@@ -46,23 +56,7 @@
   role="toolbar"
   aria-label="Toolbar with button groups"
 >
-  <div class="btn-group me-2" role="group" aria-label="First group">
-    <button type="button" class="btn btn-primary">Modifier</button>
-  </div>
   <div class="btn-group me-2" role="group" aria-label="Second group">
-    <button type="button" class="btn btn-secondary">Ajouter</button>
+    <button type="button" class="btn btn-primary">Reserver</button>
   </div>
-  <div class="btn-group" role="group" aria-label="Third group">
-    <button type="button" class="btn btn-info">Supprimer</button>
-  </div>
-</div> -->
-
-<button (click)="getBooks()">Récupérer les livres</button>
-
-<div *ngFor="let book of books">
-  <h3>{{ book.title }}</h3>
-  <p>Auteur: {{ book.authorObj.firstname }}</p>
-  <p>Résumé: {{ book.summary }}</p>
-  <p>Type de livre: {{ book.typeBook.type }}</p>
 </div>
-<p>kkskk</p>

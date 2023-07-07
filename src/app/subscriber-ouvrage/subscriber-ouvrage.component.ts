@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { OuvrageService } from '../ouvrage.service';
+
 import { Ouvrage } from '../models/ouvrage';
+import { FormControl } from '@angular/forms';
+import { OuvrageService } from '../ouvrage.service';
 
 @Component({
   selector: 'app-subscriber-ouvrage',
@@ -9,15 +11,24 @@ import { Ouvrage } from '../models/ouvrage';
   providers: [OuvrageService]
 })
 export class SubscriberOuvrageComponent {
+
+  // myControl = new FormControl();
+  // options = ['Option 1', 'Option 2', 'Option 3'];
+  
   books: Ouvrage[] = [];
+  
+  constructor(private ouvrageService: OuvrageService) {
+  }
+  
+  ngOnInit() {
+    this.getBooks()
 
-  constructor(private ouvrageService: OuvrageService) {}
-
+  }
   getBooks() {
     this.ouvrageService.getBooks()
       .subscribe(data => {
         this.books = data;
-        console.log(data)
       });
   }
+  
 }

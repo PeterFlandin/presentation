@@ -7,46 +7,51 @@ import { Ouvrage } from './models/ouvrage';
   providedIn: 'root',
 })
 export class LibrarianOuvrageService {
-  private apiUrl = 'http://localhost:8080/librarian/books';
+  private apiUrl = 'http://localhost:8080/librarian';
 
   constructor(private http: HttpClient) {}
 
-  getLibrarianOuvrage(): Observable<Ouvrage[]> {
-    return this.http.get<Ouvrage[]>(`${this.apiUrl}`).pipe(
+  getLibrarianOuvrageList(): Observable<Ouvrage[]> {
+    return this.http.get<Ouvrage[]>(`${this.apiUrl}/books`).pipe(
       tap((response) => this.log(response)),
       catchError((error) => this.handleError(error, []))
     );
   }
 
   getLibrarianOuvrageById(id: number): Observable<Ouvrage> {
-    return this.http.get<Ouvrage>(`${this.apiUrl}/${id}`).pipe(
+    return this.http.get<Ouvrage>(`${this.apiUrl}/books/${id}`).pipe(
       tap((response) => this.log(response)),
       catchError((error) => this.handleError(error, {}))
-  )}
+    );
+  }
+
+  detailsOuvrage(id: number): Observable<Ouvrage> {
+    return this.http.get<Ouvrage>(`${this.apiUrl}/books/${id}`).pipe(
+      tap((response) => this.log(response)),
+      catchError((error) => this.handleError(error, []))
+    );
+  }
 
   getCreateLibrarianOuvrage(ouvrage: Ouvrage): Observable<Object> {
     return this.http.post(`${this.apiUrl}/add`, ouvrage).pipe(
       tap((response) => this.log(response)),
       catchError((error) => this.handleError(error, {}))
     );
-    }
+  }
 
-    getDeleteLibrarianOuvrage(id: number): Observable<Object>{
-      return this.http.delete(`${this.apiUrl}/delete/${id}`).pipe(
-        tap((response) => this.log(response)),
-        catchError((error) => this.handleError(error, {}))
-      )
-    }
+  deleteOuvrage(id: number): Observable<Object> {
+    return this.http.delete(`${this.apiUrl}/books/${id}`).pipe(
+      tap((response) => this.log(response)),
+      catchError((error) => this.handleError(error, []))
+    );
+  }
 
-    getUpdateLibrarianOuvrage(id: number): Observable<Ouvrage>{
-      return this.http.get<Ouvrage>(`${this.apiUrl}/${id}`).pipe(
-        tap((response) => this.log(response)),
-        catchError((error) => this.handleError(error, {}))
-      )}
-
-
-
-    
+  updateOuvrage(id: number, ouvrage: Ouvrage): Observable<Object> {
+    return this.http.put(`${this.apiUrl}/books/${id}`, ouvrage).pipe(
+      tap((response) => this.log(response)),
+      catchError((error) => this.handleError(error, []))
+    );
+  }
 
   private log(response: any) {
     console.table(response);

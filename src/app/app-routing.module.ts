@@ -17,6 +17,9 @@ import { LibrarianCreateOuvrageComponent } from './Librarian/librarian-ouvrages/
 import { AuthorlistComponent } from './authorlist/authorlist.component';
 import { SubscriberProfilComponent } from './Subscriber/subscriber-profil/subscriber-profil.component';
 import { SubscriberProfilUpdateComponent } from './Subscriber/subscriber-profil-update/subscriber-profil-update.component';
+import { LibrarianOuvrageUpdateComponent } from './Librarian/librarian-ouvrages/librarian-ouvrage-update/librarian-ouvrage-update.component';
+import { LibrarianDetailTypeofbookComponent } from './Librarian/typeofbook/librarian-detail-typeofbook/librarian-detail-typeofbook.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -39,6 +42,14 @@ const routes: Routes = [
   {path: 'authorlist' , component : AuthorlistComponent},
   { path: 'subscriber-profil', component : SubscriberProfilComponent },
   { path:'update-subscriber/:id', component: SubscriberProfilUpdateComponent },
+  {
+    path: 'librarian-ouvrage/update/:id',
+    component: LibrarianOuvrageUpdateComponent,
+  },
+  {
+    path: 'librarian-ouvrage/add',
+    component: LibrarianCreateOuvrageComponent,
+  },
 ];
 
 @NgModule({

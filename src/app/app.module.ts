@@ -24,7 +24,8 @@ import { SubscriberProfilUpdateComponent } from './Subscriber/subscriber-profil-
 import { SubscriberProfilComponent } from './Subscriber/subscriber-profil/subscriber-profil.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+import { LibrarianOuvrageDetailsComponent } from './Librarian/librarian-ouvrages/librarian-ouvrage-details/librarian-ouvrage-details.component';
+import { LibrarianOuvrageUpdateComponent } from './Librarian/librarian-ouvrages/librarian-ouvrage-update/librarian-ouvrage-update.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,8 @@ import { HttpClientModule } from '@angular/common/http';
     AuthorlistComponent,
     SubscriberProfilComponent,
     SubscriberProfilUpdateComponent,
+    LibrarianOuvrageDetailsComponent,
+    LibrarianOuvrageUpdateComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,6 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     RouterModule,
   ],
-
   providers: [],
   bootstrap: [AppComponent],
 })

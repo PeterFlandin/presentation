@@ -7,10 +7,8 @@
         type="search"
         placeholder="Saisissez un titre"
         aria-label="Search"
-        [(ngModel)]="newLibrarianOuvrage"
-        name="newLibrarianOuvrage"
-
-        />
+      />
+      <button class="btn btn-outline-success" type="submit">Chercher</button>
     </form>
   </div>
 </nav>
@@ -22,21 +20,32 @@
     <tr>
       <th scope="col">Titre</th>
       <th scope="col">Auteur</th>
+      <th scope="col">Résumé</th>
       <th scope="col">Type d'ouvrage</th>
-      <th scope="col">Date</th>
+      <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let ouvrage of librarianOuvrage">
-      <td>
-        <div class="book-title">{{ ouvrage.title }}</div>
-      </td>
+      <td>{{ ouvrage.title }}</td>
       <td>{{ ouvrage.authorObj.firstname }}</td>
+      <td>{{ ouvrage.summary }}</td>
       <td>{{ ouvrage.typeBook.type }}</td>
       <td>
-        <div class="button-group d-flex justify-content-end">
-          <button (click)="getDetail(ouvrage.id)" type="button" class="btn btn-primary">Modifier</button>
-          <button (click)="getDelete(ouvrage.id)" type="button" class="btn btn-primary">Supprimer</button>
+        <div class="btn-group" role="group" aria-label="First group">
+          <button
+            (click)="updateOuvrage(ouvrage.id)"
+            type="button"
+            class="btn btn-outline-primary me-2"
+          >
+            Modifier
+          </button>
+          <button
+            (click)="deleteOuvrage(ouvrage.id)"
+            class="btn btn-outline-danger btn-sm"
+          >
+            Supprimer
+          </button>
         </div>
       </td>
     </tr>
@@ -58,11 +67,9 @@
 
   <div class="btn-group" role="group" aria-label="First group">
     <div class="me-2">
-    </div>
-    <div class="me-2">
-      <button type="button" (click)="getCreateLibrarianOuvrage()" class="btn btn-primary">Ajouter</button>
-    </div>
-    <div>
+      <button (click)="createOuvrage()" class="btn btn-outline-primary">
+        Ajouter
+      </button>
     </div>
   </div>
 </div>
